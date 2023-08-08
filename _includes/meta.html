@@ -1,0 +1,8 @@
+<header>
+  <h1><a href="{{ include.post.url | relative_url }}">{{ include.post.title }}</a></h1>
+  <div class="under-title">
+  {% if include.post.author-avatar %}<div><img src="{{ include.post.author-avatar }}" class="avatar-image"></div>{% endif %}
+  <div>{%- if include.post.author %}<div style="font-size: 90%">Written by {{ include.post.author }}</div>{% endif -%}
+  {%- assign date_format = site.date_format | default: "%B %d, %Y" -%}
+  <time datetime="{{ include.post.date | date_to_xmlschema }}">{{ include.post.date | date: date_format }}</time></div></div>
+</header>
